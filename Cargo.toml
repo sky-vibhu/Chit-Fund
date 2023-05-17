@@ -1,0 +1,31 @@
+[package]
+name = "chit_fund"
+version = "0.1.0"
+authors = ["[Shivam Kumar Yadav] [shivam.yadav2221@gmail.com]"]
+edition = "2021"
+
+[dependencies]
+ink = { version = "4.2.0", default-features = false }
+scale = { package = "parity-scale-codec", version = "3", default-features = false, features = ["derive"] }
+scale-info = { version = "2.5.0", default-features = false, features = ["derive"], optional = true }
+ink_env = { version = "4.2.0", default-features = false }
+ink_prelude = { version = "4.2.0", default-features = false }
+# ink_lang = { version = "3.4.0", default-features = true, features = ["assert_ok"] }
+# frame-support = { version = "21.0.0", default-features = false }
+[dev-dependencies]
+ink_e2e = "4.2.0"
+
+[lib]
+path = "lib.rs"
+
+[features]
+default = ["std"]
+std = [
+    "ink/std",
+    "ink_env/std",
+    "scale/std",
+    "scale-info/std",
+    "ink_prelude/std"
+]
+ink-as-dependency = []
+e2e-tests = []
